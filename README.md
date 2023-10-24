@@ -18,4 +18,4 @@ This is a repository of Radix Engine Toolkit examples that show-case how various
 
 You can go through the examples in any order you would like. However, the following is the recommended order:
 
-1. [`transaction/construction-of-simple-transaction`](./examples/transactions/construction-of-simple-transaction)
+1. [`transaction/construction-of-simple-transaction`](./examples/transactions/construction-of-simple-transaction): This example shows how simple transactions can be created and how ephemeral keys can be used to notarize transactions.
