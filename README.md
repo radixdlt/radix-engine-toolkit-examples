@@ -19,3 +19,4 @@ This is a repository of Radix Engine Toolkit examples that show-case how various
 You can go through the examples in any order you would like. However, the following is the recommended order:
 
 1. [`transaction/construction-of-simple-transaction`](./examples/transactions/construction-of-simple-transaction): This example shows how simple transactions can be created and how ephemeral keys can be used to notarize transactions.
+1. [`transaction/construction-of-simple-transaction-string-manifests`](./examples/transactions/construction-of-simple-transaction-string-manifests/): This is identical ot the first example with the only difference being that the manifest is created from a string manifest (the contents of the `.rtm` files) instead of using the manifest builder.
