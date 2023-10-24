@@ -13,8 +13,3 @@ This is a repository of Radix Engine Toolkit examples that show-case how various
 2. Kotlin
 3. Python
 4. Swift
-5. Rust<sup>[1]</sup>
-
-<div style="height: 1px; width: 100%; background-color: grey; margin-top: 10px; margin-bottom: 10px"></div>
-
-<sup>[1] The Rust examples make use of the Radix Engine Toolkit as well as the Scrypto and Radix Engine crates. The Radix Engine Toolkit is utilized when it offers a better interface than that offered in other crates.</sup>
