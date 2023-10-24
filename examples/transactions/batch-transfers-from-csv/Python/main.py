@@ -95,7 +95,7 @@ def main() -> None:
                 current_epoch + 10,
                 random_nonce(),
                 public_key,
-                False,
+                True,
                 0,
             )
         )
