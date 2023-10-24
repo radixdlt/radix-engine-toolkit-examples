@@ -13,3 +13,9 @@ This is a repository of Radix Engine Toolkit examples that show-case how various
 2. Kotlin
 3. Python
 4. Swift
+
+## Order
+
+You can go through the examples in any order you would like. However, the following is the recommended order:
+
+1. [`transaction/construction-of-simple-transaction`](./examples/transactions/construction-of-simple-transaction)
