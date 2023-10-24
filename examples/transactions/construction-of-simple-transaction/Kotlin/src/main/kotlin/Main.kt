@@ -15,6 +15,7 @@ fun main(args: Array<String>) {
 
     // Constructing the manifest
     val manifest = ManifestBuilder().faucetLockFee().dropAllProofs().build(networkId)
+    println("Constructed manifest: ${manifest.instructions().asStr()}");
 
     // Constructing the transaction
     val currentEpoch = MockGatewayApiClient.currentEpoch()
