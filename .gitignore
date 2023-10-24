@@ -1,1 +1,9 @@
+# Build directory of Kotlin and Rust
 target
+
+# Idea config files
+.idea
+
+# Build directories of C#.
+bin
+obj
