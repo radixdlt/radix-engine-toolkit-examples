@@ -28,7 +28,7 @@ internal static class CSharp
         // that there are couple of optimizations that could be done here to ensure that the final
         // manifest is more fee-efficient. However, this example aims more at clarity; thus, no
         // optimizations are performed.
-        using var manifestBuilder = new ManifestBuilder().AccountLockFee(
+        var manifestBuilder = new ManifestBuilder().AccountLockFee(
             accountAddress,
             new Decimal("30")
         );
