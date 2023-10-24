@@ -6,7 +6,7 @@ let package = Package(
     name: "SwiftExample",
     platforms: [.macOS(.v12), .iOS(.v12)],
     dependencies: [
-        .package(url: "https://github.com/radixdlt/swift-engine-toolkit", exact: "0.12.1-c44533b"),
+        .package(url: "https://github.com/radixdlt/swift-engine-toolkit", exact: "1.0.0-6a1db49"),
     ],
     targets: [
         .executableTarget(

@@ -8,7 +8,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="RadixDlt.RadixEngineToolkit" Version="1.0.0"/>
+        <PackageReference Include="RadixDlt.RadixEngineToolkit" Version="1.0.0-commit-6a1db49"/>
     </ItemGroup>
 
 </Project>

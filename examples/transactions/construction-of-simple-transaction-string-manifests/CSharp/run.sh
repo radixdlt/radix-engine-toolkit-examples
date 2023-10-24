@@ -3,4 +3,4 @@
 SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 cd $SCRIPT_DIR
 
-dotnet run --project $SCRIPT_DIR/CSharp
+(cd $SCRIPT_DIR/CSharp; dotnet run)
