@@ -43,7 +43,7 @@ def main() -> None:
     # Generating the workflow
     workflow: dict[str, Any] = {
         "name": "Test",
-        "on": {"pull_request": {}},
+        "on": {"pull_request": {}, "push": {"branches": ["*"]}},
         "jobs": {
             "test-examples": {
                 "runs-on": "${{ matrix.examples.runs-on }}",
@@ -56,21 +56,21 @@ def main() -> None:
                                 "example-name": example_information["name"],
                                 "category": example_information["category"],
                                 "script-path": path.replace(root_directory, "."),
-                                "runs-on": "macos-latest" if example_information["language"] == "Swift" else "ubuntu-latest",
+                                "runs-on": "macos-latest"
+                                if example_information["language"] == "Swift"
+                                else "ubuntu-latest",
                             }
                             for path, example_information in example_information.items()
                         ]
                     }
                 },
-                "name": "Test ${{ matrix.examples.language }}-${{ matrix.examples.category }}-${{ matrix.examples.example-name }}", 
+                "name": "Test ${{ matrix.examples.language }}-${{ matrix.examples.category }}-${{ matrix.examples.example-name }}",
                 "steps": [
                     {"name": "Checkout", "uses": "actions/checkout@v3"},
                     {
                         "uses": "actions/setup-python@v4",
                         "if": "${{ matrix.examples.language == 'Python' }}",
-                        "with": {
-                            "python-version": "3.12"
-                        }
+                        "with": {"python-version": "3.12"},
                     },
                     {
                         "name": "Run Script",

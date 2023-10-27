@@ -1,6 +1,9 @@
 name: Test
 'on':
   pull_request: {}
+  push:
+    branches:
+    - '*'
 jobs:
   test-examples:
     runs-on: ${{ matrix.examples.runs-on }}
