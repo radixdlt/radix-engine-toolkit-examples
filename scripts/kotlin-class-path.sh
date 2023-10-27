@@ -11,7 +11,7 @@ DEPENDENCIES_DIR=$(cd $SCRIPT_DIR/../dependencies; pwd)
 CLASS_PATH=""
 for JAR_FILE_PATH in $(ls $DEPENDENCIES_DIR/*.jar)
 do
-    CLASS_PATH="$CLASS_PATH:$JAR_FILE_PATH"
+    CLASS_PATH="$CLASS_PATH:$(realpath $JAR_FILE_PATH)"
 done
 
 echo $CLASS_PATH
