@@ -65,6 +65,7 @@ def main() -> None:
                     {"name": "Checkout", "uses": "actions/checkout@v3"},
                     {
                         "uses": "actions/setup-python@v4",
+                        "if": "${{ matrix.examples.language == 'Python' }}",
                         "with": {
                             "python-version": "3.12"
                         }
