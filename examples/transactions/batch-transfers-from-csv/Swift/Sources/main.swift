@@ -71,6 +71,7 @@ for (index, row) in csvFile.rows.enumerated() {
         )
 }
 let manifest = manifestBuilder.build(networkId: networkId)
+try! manifest.staticallyValidate()
 print("Constructed manifest: \(try! manifest.instructions().asStr())")
 
 // Constructing the transaction

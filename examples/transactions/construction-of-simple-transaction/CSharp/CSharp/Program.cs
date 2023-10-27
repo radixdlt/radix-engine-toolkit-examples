@@ -27,6 +27,7 @@ internal static class CSharp
             .Build(
                 networkId
             );
+        manifest.StaticallyValidate();
         Console.WriteLine($"Constructed manifest: {manifest.Instructions().AsStr()}");
         
         // Constructing the transaction

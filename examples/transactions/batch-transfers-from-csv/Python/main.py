@@ -82,6 +82,7 @@ def main() -> None:
                 )
             )
     manifest: TransactionManifest = manifest_builder.build(NETWORK_ID)
+    manifest.statically_validate()
     print(f"Constructed manifest: {manifest.instructions().as_str()}")
 
     # Constructing the transaction

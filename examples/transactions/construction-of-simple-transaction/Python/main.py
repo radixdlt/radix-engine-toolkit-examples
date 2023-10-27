@@ -54,6 +54,7 @@ def main() -> None:
     manifest: TransactionManifest = (
         ManifestBuilder().faucet_lock_fee().drop_all_proofs().build(NETWORK_ID)
     )
+    manifest.statically_validate()
     print(f"Constructed manifest: {manifest.instructions().as_str()}")
 
     # Constructing the transaction

@@ -36,6 +36,7 @@ internal static class CSharp
             ),
             Array.Empty<byte[]>()
         );
+        manifest.StaticallyValidate();
         Console.WriteLine($"Constructed manifest: {manifest.Instructions().AsStr()}");
         
         // Constructing the transaction

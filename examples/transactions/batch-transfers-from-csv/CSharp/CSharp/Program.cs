@@ -68,6 +68,7 @@ internal static class CSharp
         }
 
         using var manifest = manifestBuilder.Build(networkId);
+        manifest.StaticallyValidate();
         Console.WriteLine(
             $"Constructed manifest: {manifest.Instructions().AsStr()}"
         );

@@ -63,6 +63,7 @@ def main() -> None:
         Instructions.from_string(manifest_string, NETWORK_ID),
         []
     )
+    manifest.statically_validate()
     print(f"Constructed manifest: {manifest.instructions().as_str()}")
 
     # Constructing the transaction

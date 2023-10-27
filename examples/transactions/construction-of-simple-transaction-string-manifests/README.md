@@ -30,6 +30,7 @@ After going through this example, you should be able to:
 * Construct `TransactionManifest` objects from string manifests.
 * Construct transactions through the Radix Engine Toolkit builders.
 * Find the transaction id of transactions prior to submitting them.
+* The static validation of transaction manifests prior submission and prior to the construction of transactions.
 * Convert addresses to strings and print them.
 * Convert manifests to strings and print them.
 * Convert transaction hashes to strings and print them.

@@ -27,6 +27,7 @@ fun main(args: Array<String>) {
         Instructions.fromString(manifestString, networkId),
         listOf()
     );
+    manifest.staticallyValidate()
     println("Constructed manifest: ${manifest.instructions().asStr()}")
 
     // Constructing the transaction

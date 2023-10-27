@@ -59,6 +59,7 @@ let manifest = try! TransactionManifest(
     ),
     blobs: []
 );
+try! manifest.staticallyValidate()
 print("Constructed manifest: \(try! manifest.instructions().asStr())")
 
 // Constructing the transaction
