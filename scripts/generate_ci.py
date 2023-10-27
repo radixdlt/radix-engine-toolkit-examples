@@ -1,6 +1,8 @@
 """
 This script finds all of the `run.sh` scripts that exist in the repository and generates GitHub CI
 jobs to run all of the scripts as a matrix and check that all of the examples run with no problems.
+This means that when new examples or languages are added no changes need to be made to the testing
+CI workflow.
 """
 
 from typing import Optional, TypedDict, Any
