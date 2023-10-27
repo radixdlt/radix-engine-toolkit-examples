@@ -64,6 +64,12 @@ def main() -> None:
                 "steps": [
                     {"name": "Checkout", "uses": "actions/checkout@v3"},
                     {
+                        "uses": "actions/setup-python@v4",
+                        "with": {
+                            "python-version": "3.12"
+                        }
+                    },
+                    {
                         "name": "Run Script",
                         "run": "${{ matrix.examples.script-path }}",
                     },
