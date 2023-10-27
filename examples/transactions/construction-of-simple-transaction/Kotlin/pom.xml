@@ -88,9 +88,9 @@
         <dependency>
             <groupId>com.radixdlt.ret</groupId>
             <artifactId>ret</artifactId>
-            <version>1.0.0-d06aee9</version>
+            <version>1.0.0-6a1db49</version>
             <scope>system</scope>
-            <systemPath>${project.basedir}/../../../../dependencies/radix-engine-toolkit-kotlin-1.0.0-d06aee9.jar</systemPath>
+            <systemPath>${project.basedir}/../../../../dependencies/radix-engine-toolkit-kotlin-1.0.0-6a1db49.jar</systemPath>
         </dependency>
         <dependency>
             <groupId>net.java.dev.jna</groupId>
