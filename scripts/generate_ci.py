@@ -44,7 +44,7 @@ def main() -> None:
         "on": {"pull_request": {}},
         "jobs": {
             "test-examples": {
-                "runs-on": "ubuntu-latest",
+                "runs-on": "${{ matrix.examples.runs-on }}",
                 "continue-on-error": True,
                 "strategy": {
                     "matrix": {
@@ -54,15 +54,17 @@ def main() -> None:
                                 "example-name": example_information["name"],
                                 "category": example_information["category"],
                                 "script-path": path.replace(root_directory, "."),
+                                "runs-on": "macos-latest" if example_information["language"] == "Swift" else "ubuntu-latest",
                             }
                             for path, example_information in example_information.items()
                         ]
                     }
                 },
+                "name": "Test ${{ matrix.examples.language }}-${{ matrix.examples.category }}-${{ matrix.examples.example-name }}", 
                 "steps": [
                     {"name": "Checkout", "uses": "actions/checkout@v3"},
                     {
-                        "name": "Test ${{ matrix.examples.language }}-${{ matrix.examples.category }}-${{ matrix.examples.example-name }}",
+                        "name": "Run Script",
                         "run": "${{ matrix.examples.script-path }}",
                     },
                 ],

@@ -3,7 +3,7 @@ name: Test
   pull_request: {}
 jobs:
   test-examples:
-    runs-on: ubuntu-latest
+    runs-on: ${{ matrix.examples.runs-on }}
     continue-on-error: true
     strategy:
       matrix:
@@ -12,52 +12,65 @@ jobs:
           example-name: batch-transfers-from-csv
           category: transactions
           script-path: ./examples/transactions/batch-transfers-from-csv/Python/run.sh
+          runs-on: ubuntu-latest
         - language: Kotlin
           example-name: batch-transfers-from-csv
           category: transactions
           script-path: ./examples/transactions/batch-transfers-from-csv/Kotlin/run.sh
+          runs-on: ubuntu-latest
         - language: Swift
           example-name: batch-transfers-from-csv
           category: transactions
           script-path: ./examples/transactions/batch-transfers-from-csv/Swift/run.sh
+          runs-on: macos-latest
         - language: CSharp
           example-name: batch-transfers-from-csv
           category: transactions
           script-path: ./examples/transactions/batch-transfers-from-csv/CSharp/run.sh
+          runs-on: ubuntu-latest
         - language: Python
           example-name: construction-of-simple-transaction-string-manifests
           category: transactions
           script-path: ./examples/transactions/construction-of-simple-transaction-string-manifests/Python/run.sh
+          runs-on: ubuntu-latest
         - language: Kotlin
           example-name: construction-of-simple-transaction-string-manifests
           category: transactions
           script-path: ./examples/transactions/construction-of-simple-transaction-string-manifests/Kotlin/run.sh
+          runs-on: ubuntu-latest
         - language: Swift
           example-name: construction-of-simple-transaction-string-manifests
           category: transactions
           script-path: ./examples/transactions/construction-of-simple-transaction-string-manifests/Swift/run.sh
+          runs-on: macos-latest
         - language: CSharp
           example-name: construction-of-simple-transaction-string-manifests
           category: transactions
           script-path: ./examples/transactions/construction-of-simple-transaction-string-manifests/CSharp/run.sh
+          runs-on: ubuntu-latest
         - language: Python
           example-name: construction-of-simple-transaction
           category: transactions
           script-path: ./examples/transactions/construction-of-simple-transaction/Python/run.sh
+          runs-on: ubuntu-latest
         - language: Kotlin
           example-name: construction-of-simple-transaction
           category: transactions
           script-path: ./examples/transactions/construction-of-simple-transaction/Kotlin/run.sh
+          runs-on: ubuntu-latest
         - language: Swift
           example-name: construction-of-simple-transaction
           category: transactions
           script-path: ./examples/transactions/construction-of-simple-transaction/Swift/run.sh
+          runs-on: macos-latest
         - language: CSharp
           example-name: construction-of-simple-transaction
           category: transactions
           script-path: ./examples/transactions/construction-of-simple-transaction/CSharp/run.sh
+          runs-on: ubuntu-latest
+    name: Test ${{ matrix.examples.language }}-${{ matrix.examples.category }}-${{ matrix.examples.example-name }}
     steps:
     - name: Checkout
       uses: actions/checkout@v3
-    - name: Test ${{ matrix.examples.language }}-${{ matrix.examples.category }}-${{ matrix.examples.example-name }}
+    - name: Run Script
       run: ${{ matrix.examples.script-path }}
